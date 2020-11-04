@@ -6,7 +6,7 @@
 /*   By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 21:12:21 by ejolyn            #+#    #+#             */
-/*   Updated: 2020/11/03 15:03:33 by ejolyn           ###   ########.fr       */
+/*   Updated: 2020/11/03 20:01:07 by ejolyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,25 @@ int static counter_str(char const *s, char c)
 	int str;
 
 	str = 0;
+	if (ft_strchr(s, c) == NULL)
+		return(2);
 	while (*s)
 	{
-		while (*s++ == c)
-			;
-		if (*--s != c)
 		{
-			str++;
-			while (*s != c && *s++ != '\0')
+			while (*s++ == c)
 				;
+			s--;
+			if (*s != c)
+			{
+				str++;
+				while (*s != c && *s != '\0')
+					s++;
+			}
 		}
 	}
-	return(str - 1);
+	if (str == 1)
+		str++;
+	return(str);
 }
 size_t static counter_len(char const *s, char c, int *j)
 {
@@ -37,20 +44,23 @@ size_t static counter_len(char const *s, char c, int *j)
 	int k;
 
 	len = 0;
-	k = *j;
-	while (s[k] == c && s[k] != '\0')
+	k = (*j > 0) ? *j + 1 : *j;
+	while (s[k] == c  && s[k] != '\0')
 		k++;
-	while (s[k++] != c)
+	while (s[k] != c && s[k] != '\0')
+	{
 		len++;
-	*j = k - 1 - len;
-	return(len + 1);
+		k++;
+	}
+	*j = k - len;
+	return(len);
 }
 char **free_helper(char **divide, int i)
 {
 	while (--i >= 0)
 		free(divide[i]);
 	free (divide);
-	return ((char **)NULL);
+	return (NULL);
 }
 char **ft_split(char const *s, char c)
 {
@@ -62,6 +72,8 @@ char **ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
+	if (s == NULL)
+		return(NULL);
 	str = counter_str(s, c) - 1;
 	divide = (char **) malloc ((str + 1) * sizeof(char *));
 	if (divide == NULL)
@@ -69,11 +81,11 @@ char **ft_split(char const *s, char c)
 	while (i < str)
 	{
 		len = counter_len(s, c, &j);
-		divide[i] = ft_substr(s, j, len - 1);
+		divide[i] = ft_substr(s, j, len);
 		if (divide[i] == NULL)
 			return (free_helper(divide, i));
-		if (j < ft_strlen(s))
-			j += len - 1;
+		if (j + (int)len < ft_strlen(s))
+			j += len;
 		i++;
 	}
 	divide[i] = NULL;
@@ -81,10 +93,10 @@ char **ft_split(char const *s, char c)
 }
 int main()
 {
-char *string = "split  ||this|for|me|||||!|";
+char *string = NULL;
 char **result = ft_split(string, '|');
 int i = -1;
 while (result[++i])
-    printf("%s1\n", result[i]);
+    printf("%s\n", result[i]);
   return 0;
 }

@@ -6,7 +6,7 @@
 #    By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/02 20:44:56 by ejolyn            #+#    #+#              #
-#    Updated: 2020/11/03 14:31:47 by ejolyn           ###   ########.fr        #
+#    Updated: 2020/11/03 16:52:33 by ejolyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ BONOBJS		=	${BONUS:.c=.o}
 
 INCLUDE		=	libft.h
 
-RM			=	rm
+RM			=	rm -f
 
 AR			=	ar rc
 
@@ -42,8 +42,7 @@ ${NAME}:	${OBJS} ${INCLUDE}
 
 all:		${NAME}
 
-
-bonus:		${BONOBJS}
+bonus:		${BONOBJS} ${OBJS} ${INCLUDE}
 			${AR} ${NAME} ${BONOBJS} 
 			ranlib ${NAME}
 
