@@ -6,13 +6,13 @@
 /*   By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 16:01:56 by ejolyn            #+#    #+#             */
-/*   Updated: 2020/11/02 20:59:16 by ejolyn           ###   ########.fr       */
+/*   Updated: 2020/11/04 10:54:51 by ejolyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int i;
 

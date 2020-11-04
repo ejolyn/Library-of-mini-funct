@@ -6,13 +6,13 @@
 /*   By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 12:03:18 by ejolyn            #+#    #+#             */
-/*   Updated: 2020/11/03 12:05:47 by ejolyn           ###   ########.fr       */
+/*   Updated: 2020/11/04 11:11:39 by ejolyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int i;
 
@@ -22,5 +22,5 @@ int ft_lstsize(t_list *lst)
 		lst = lst->next;
 		i++;
 	}
-	return(i);
+	return (i);
 }

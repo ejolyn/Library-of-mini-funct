@@ -6,23 +6,23 @@
 /*   By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 18:08:55 by ejolyn            #+#    #+#             */
-/*   Updated: 2020/11/02 20:56:49 by ejolyn           ###   ########.fr       */
+/*   Updated: 2020/11/04 10:40:33 by ejolyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	const char *s2;
-	char c2;
+	const char	*s2;
+	char		c2;
 
-	c2 = (char) c;
+	c2 = (char)c;
 	s2 = s + ft_strlen(s) + 1;
 	while (s2-- >= s)
 	{
 		if (*s2 == c2)
 			return ((char *)s2);
-	} 
+	}
 	return (NULL);
 }

@@ -6,16 +6,16 @@
 /*   By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 10:30:12 by ejolyn            #+#    #+#             */
-/*   Updated: 2020/11/02 20:57:28 by ejolyn           ###   ########.fr       */
+/*   Updated: 2020/11/04 10:54:11 by ejolyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *a;
-	const unsigned char *b;
+	unsigned char		*a;
+	const unsigned char	*b;
 
 	a = dst;
 	b = src;
@@ -31,5 +31,5 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 	else
 		while (len--)
 			*a++ = *b++;
-	return(dst);
+	return (dst);
 }

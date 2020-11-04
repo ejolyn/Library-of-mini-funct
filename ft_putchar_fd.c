@@ -6,15 +6,15 @@
 /*   By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 15:47:25 by ejolyn            #+#    #+#             */
-/*   Updated: 2020/11/02 20:58:53 by ejolyn           ###   ########.fr       */
+/*   Updated: 2020/11/04 10:47:46 by ejolyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	int i;
 
-	i = write (fd, &c, 1);
+	i = write(fd, &c, 1);
 }

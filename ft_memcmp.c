@@ -6,12 +6,13 @@
 /*   By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 13:52:39 by ejolyn            #+#    #+#             */
-/*   Updated: 2020/11/02 20:56:05 by ejolyn           ###   ########.fr       */
+/*   Updated: 2020/11/04 11:00:04 by ejolyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const unsigned char *copy1;
 	const unsigned char *copy2;

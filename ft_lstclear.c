@@ -6,13 +6,13 @@
 /*   By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 14:09:39 by ejolyn            #+#    #+#             */
-/*   Updated: 2020/11/03 14:25:21 by ejolyn           ###   ########.fr       */
+/*   Updated: 2020/11/04 11:01:24 by ejolyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del) (void *))
+void	ft_lstclear(t_list **lst, void (*del) (void *))
 {
 	t_list **copy;
 

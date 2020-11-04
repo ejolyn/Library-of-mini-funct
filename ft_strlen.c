@@ -6,13 +6,13 @@
 /*   By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 13:06:06 by ejolyn            #+#    #+#             */
-/*   Updated: 2020/11/02 20:59:48 by ejolyn           ###   ########.fr       */
+/*   Updated: 2020/11/04 10:33:55 by ejolyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strlen (const char *s)
+int	ft_strlen(const char *s)
 {
 	const char *s2;
 

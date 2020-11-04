@@ -6,13 +6,13 @@
 /*   By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 19:52:37 by ejolyn            #+#    #+#             */
-/*   Updated: 2020/11/02 21:00:23 by ejolyn           ###   ########.fr       */
+/*   Updated: 2020/11/04 10:33:39 by ejolyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c > 96 && c < 123)
 		c = c - 32;

@@ -6,7 +6,7 @@
 #    By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/02 20:44:56 by ejolyn            #+#    #+#              #
-#    Updated: 2020/11/03 16:52:33 by ejolyn           ###   ########.fr        #
+#    Updated: 2020/11/04 14:41:31 by ejolyn           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJS		=	${SRCS:.c=.o}
 NAME		=	libft.a
 
 BONUS		=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
-				ft_lstiter.c \
+				ft_lstiter.c ft_lstmap.c \
 
 BONOBJS		=	${BONUS:.c=.o}
 
@@ -36,7 +36,7 @@ CFLAGS		=	-Wall -Werror -Wextra
 .c.o: 		${OBJS} ${INCLUDE}
 			gcc ${CFLAGS} -c $< -o ${<:.c=.o}
 
-${NAME}:	${OBJS} ${INCLUDE}
+$(NAME):	${OBJS} ${INCLUDE}
 			${AR} ${NAME} ${OBJS}
 			ranlib ${NAME}
 
