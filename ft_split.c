@@ -6,23 +6,22 @@
 /*   By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 21:12:21 by ejolyn            #+#    #+#             */
-/*   Updated: 2020/11/04 22:22:06 by ejolyn           ###   ########.fr       */
+/*   Updated: 2020/11/05 13:12:06 by ejolyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-
-int static counter_str(char const *s, char c)
+static	int		ft_counter_str(char const *s, char c)
 {
 	int str;
 
 	str = 0;
 	while (*s++ == c)
 		;
-	if (--s == '\0')
-		return(1);
+	s--;
+	if (c == '\0')
+		return (1);
 	while (*s)
 	{
 		while (*s != c && *s != '\0')
@@ -33,14 +32,15 @@ int static counter_str(char const *s, char c)
 	}
 	return (str);
 }
-size_t static counter_len(char const *s, char c, int *j)
+
+static	int		ft_counter_len(char const *s, char c, int *j)
 {
-	size_t len;
+	int len;
 	int k;
 
 	len = 0;
-	k = (*j > 0) ? *j + 1 : *j;
-	while (s[k] == c  && s[k] != '\0')
+	k = (*j > 0) ? (*j + 1) : (*j);
+	while (s[k] == c && s[k] != '\0')
 		k++;
 	while (s[k] != c && s[k] != '\0')
 	{
@@ -48,40 +48,42 @@ size_t static counter_len(char const *s, char c, int *j)
 		k++;
 	}
 	*j = k - len;
-	return(len);
+	return (len);
 }
-char static **free_helper(char **divide, int i)
+
+static	char	**free_helper(char **divide, int i)
 {
 	while (--i >= 0)
 		free(divide[i]);
-	free (divide);
+	free(divide);
 	return (NULL);
 }
-char **ft_split(char const *s, char c)
+
+char			**ft_split(char const *s, char c)
 {
-	char **divide;
-	int i;
-	int j;
-	int str;
-	size_t len;
+	char	**divide;
+	int		i;
+	int		j;
+	int		str;
+	int		len;
 
 	i = 0;
 	j = 0;
 	if (s == NULL)
-		return(NULL);
-	str = counter_str(s, c);
-	divide = (char **) malloc ((str + 1) * sizeof(char *));
+		return (NULL);
+	str = ft_counter_str(s, c);
+	divide = (char **)malloc((str + 1) * sizeof(char *));
 	if (divide == NULL)
-		return(NULL);
+		return (NULL);
 	while (i < str)
 	{
-		len = counter_len(s, c, &j);
+		len = ft_counter_len(s, c, &j);
 		divide[i] = ft_substr(s, j, len);
 		if (divide[i] == NULL)
 			return (free_helper(divide, i));
-		j = (j + (int)len < ft_strlen(s)) ? j + len : j;
+		j = (j + len < ft_strlen(s)) ? j + len : j;
 		i++;
 	}
 	divide[i] = NULL;
-	return(divide);
+	return (divide);
 }

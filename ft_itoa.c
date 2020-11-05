@@ -6,17 +6,16 @@
 /*   By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 12:18:21 by ejolyn            #+#    #+#             */
-/*   Updated: 2020/11/04 22:39:59 by ejolyn           ###   ########.fr       */
+/*   Updated: 2020/11/05 10:26:15 by ejolyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-static char *ft_reverse(char *str, int len)
+static	char	*ft_reverse(char *str, int len)
 {
-	int i;
-	char c;
+	int		i;
+	char	c;
 
 	i = 0;
 	c = 0;
@@ -28,10 +27,10 @@ static char *ft_reverse(char *str, int len)
 		i++;
 		len--;
 	}
-    return (str);
+	return (str);
 }
 
-static int counter(int n)
+static	int		counter(int n)
 {
 	int len;
 
@@ -41,31 +40,31 @@ static int counter(int n)
 	return (len);
 }
 
-char *ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-    int n2;
-    int len;
-    char *str;
-    unsigned int nbr;
+	int				n2;
+	int				len;
+	char			*str;
+	unsigned int	nbr;
 
-    len = counter(n);
-    nbr = (n < 0) ? (unsigned int) n * -1 : n;
-    n2 = (n < 0) ? 1 : 0;
-    len = (n < 0) ? len + 1 : len;
-    str = (char *)malloc(len + 1);
+	len = counter(n);
+	nbr = (n < 0) ? (unsigned int)n * -1 : n;
+	n2 = (n < 0) ? 1 : 0;
+	len = (n < 0) ? len + 1 : len;
+	str = (char *)malloc(len + 1);
 	len = 0;
-    if (str == NULL)
-        return(str);
-    if (n == 0)
-        str[len++] = '0';
-    while (nbr)
-    {
-        str[len++] = nbr % 10 + '0';
-        nbr /= 10;
-    }
-    if (n2)
-        str[len++] = '-';
-    str[len] = '\0';
-    str = ft_reverse(str, len-1);
-    return (str);
+	if (str == NULL)
+		return (str);
+	if (n == 0)
+		str[len++] = '0';
+	while (nbr)
+	{
+		str[len++] = nbr % 10 + '0';
+		nbr /= 10;
+	}
+	if (n2)
+		str[len++] = '-';
+	str[len] = '\0';
+	str = ft_reverse(str, len - 1);
+	return (str);
 }

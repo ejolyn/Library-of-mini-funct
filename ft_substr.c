@@ -6,22 +6,23 @@
 /*   By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:19:58 by ejolyn            #+#    #+#             */
-/*   Updated: 2020/11/04 10:27:45 by ejolyn           ###   ########.fr       */
+/*   Updated: 2020/11/05 12:52:25 by ejolyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char *substr;
 	char *flag;
 
-	substr = (char *)malloc(len + 1);
-	flag = substr;
 	if (s == NULL)
 		return (NULL);
-	if (substr == NULL || (int)start >= ft_strlen(s))
+	substr = (char *)malloc(len + 1);
+	flag = substr;
+	if (substr == NULL || ((int)start >= ft_strlen(s)))
 		return (substr);
 	while (start--)
 		s++;

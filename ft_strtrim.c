@@ -6,7 +6,7 @@
 /*   By: ejolyn <ejolyn@stud.21-school.ru>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 10:45:38 by ejolyn            #+#    #+#             */
-/*   Updated: 2020/11/04 22:25:45 by ejolyn           ###   ########.fr       */
+/*   Updated: 2020/11/05 11:02:31 by ejolyn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (ft_strchr(set, s1[len]))
 		len--;
 	if (len2 >= len)
-		return ("\0");
+		return (ft_strdup("\0"));
 	copy = (char *)malloc(len - len2 + 2);
 	if (copy == NULL)
 		return (copy);
